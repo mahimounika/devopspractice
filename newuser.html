@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>registration</title>
+<link rel="stylesheet" type="css/text" href="mystyle.css">
+<style>
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-bottom:2px solid green;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-bottom:2px solid green;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=reset] {
+  width: 60%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+tr{
+ color: black;
+}
+h2 {
+ color: red;
+ font-family: rockwell;
+ font-weight: 500;
+ font-style: italic;
+ text-transform: uppercase;
+ background-color:lightgray;
+}
+</style> 
+
+<script>
+function validateform(exp)
+{
+var user=document.reg.user.value;  
+var password=document.reg.password.value;  
+var re4 = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+var ca=document.reg.card.value;
+var cvv=document.reg.cvv.value;
+var hn=document.reg.chn.value;
+
+if (user==null || user==""){  
+  alert("User Name can't be blank");  
+  return false;  
+}else if(password==null || password.length<6){  
+  alert("GIVE AN APPROPRIATE PASSWORD");  
+  return false;  
+  }
+else if(re4.test(exp.email.value)==false){
+alert("ENTER A VALID E-MAIL");
+exp.email.focus();
+return false;
+}
+ else if(!exp.gender[0].checked && !exp.gender[1].checked)
+{
+alert("PLEASE SELECT YOUR GENDER");
+}
+
+if(ca==NULL)
+{
+	alert("enter card details");
+	return false;
+}
+if(cvv!=3)
+{
+	alert("enter valid cvv");
+	return false;
+}
+if(hn==NULL)
+{
+	alert("enter card holder name");
+	return false;
+}
+
+ }
+
+</script>
+</head>
+<body background="background1.jpg">
+	
+
+<div>
+<center>
+<h2>Registration Form</h2>
+<form name="reg"  method="POST" onsubmit= "return validateform(this)" action="register.php">   
+ <br>   
+ <table>
+<tr><td> NAME</td><td>:</td><td><input type="text"name="first name"/></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>EMAIL ID</td><td>:</td><td><input type="text"name="email"/></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Username</td><td>:</td> <td><input type="text" name="user"></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>D.O.B</td><td>:</td><td><input type="date" id="date" name="date"/></td></tr>  
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Password</td><td>:</td><td> <input type="password" name="password"></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Card.NO</td><td>:</td><td> <input type="text" name="card" size= "16"></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Expiry Date</td><td>:</td><td> <input type="text" name="exp"></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Cvv.No</td><td>:</td><td> <input type="password" name="cvv" size="3"></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Card Holder Name</td><td>:</td><td> <input type="text" name="chn"></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<center><tr><td colspan='3' align="center"><input type="submit" value="Register" name="submit" /></td></tr></center>       
+   
+</form> 
+</center>
+</div>
+                       </nav>
+	</section>
+</body>
+
+</html>                                                                                                                                               
